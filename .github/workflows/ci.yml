@@ -15,10 +15,6 @@ concurrency:
   group: ci-${{ github.ref }}
   cancel-in-progress: true
 
-defaults:
-  run:
-    working-directory: nodo-usuarios
-
 jobs:
   frontend:
     name: Front-end (lint, Vitest, build)
@@ -29,7 +25,7 @@ jobs:
         with:
           node-version: 22
           cache: npm
-          cache-dependency-path: nodo-usuarios/package-lock.json
+          cache-dependency-path: package-lock.json
       - run: npm ci
       - run: npm run lint
       - run: npx vitest run
@@ -63,8 +59,8 @@ jobs:
           python-version: "3.12"
           cache: pip
           cache-dependency-path: |
-            nodo-usuarios/backend/requirements.txt
-            nodo-usuarios/backend/requirements-dev.txt
+            backend/requirements.txt
+            backend/requirements-dev.txt
       # El mismo entorno que en local: `npm run test:api` usa backend/.venv.
       # Las pruebas definen sus propias variables de entorno (tests/conftest.py); no hace falta .env.
       - run: |
