@@ -6,7 +6,7 @@ Nodo: panel de administración de usuarios y roles. Front-end React 19 + TypeScr
 
 Las normas de cada apartado están en `.claude/rules/` y se cargan solas según los archivos que se toquen.
 
-## Comandos (desde `nodo-usuarios/`)
+## Comandos (desde la raíz del repositorio)
 
 - `npm start`: arranca PostgreSQL (Docker), la API y Vite a la vez en un solo terminal (`concurrently`).
 - `npm run db:start` / `npm run db:stop`: arranca o detiene el PostgreSQL de `docker-compose.yml` (`127.0.0.1:5433`; bases `nodo` y `nodo_test`).
